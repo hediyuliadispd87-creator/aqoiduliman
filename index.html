@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aqoidul Iman yang 50 — Mazhab Asy'ari</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:    #C9972B;
+    --gold-lt: #E8C46A;
+    --ink:     #1A1209;
+    --parch:   #F9F4E8;
+    --parch2:  #F0E8D0;
+    --teal:    #1B6B6B;
+    --teal-lt: #2A9D8F;
+    --ruby:    #8B1A1A;
+    --ruby-lt: #C0392B;
+    --cream:   #FDF8EE;
+    --shadow:  rgba(26,18,9,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--parch);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 0%, #2A1A00 0%, #0D0905 70%);
+  }
+
+  .hero-bg-ornament {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(201,151,43,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(27,107,107,0.10) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-mandala {
+    position: absolute;
+    width: 600px; height: 600px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.04;
+    animation: slowspin 120s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes slowspin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold-lt);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadein 1s ease both;
+  }
+
+  .hero-arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    color: var(--gold-lt);
+    line-height: 1.3;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 24px rgba(201,151,43,0.4);
+    animation: fadein 1s .2s ease both;
+    direction: rtl;
+  }
+
+  .hero-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(22px, 3.5vw, 40px);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 12px;
+    animation: fadein 1s .35s ease both;
+  }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+    max-width: 540px;
+    margin: 0 auto 48px;
+    animation: fadein 1s .5s ease both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadein 1s .65s ease both;
+  }
+
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gold-lt);
+    display: block;
+  }
+  .hero-stat-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    color: rgba(255,255,255,0.3);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(240,232,208,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    padding: 14px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    color: var(--ink);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    transition: all .25s;
+    white-space: nowrap;
+  }
+  .nav-tab:hover { color: var(--teal); }
+  .nav-tab.active {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    display: none;
+  }
+  .section.active { display: block; }
+
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .intro-box {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 40px;
+    font-size: 14.5px;
+    color: #3a2e1a;
+    line-height: 1.8;
+  }
+
+  /* ── SIFAT CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--cream);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px var(--shadow);
+    transition: transform .25s, box-shadow .25s;
+    cursor: pointer;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px var(--shadow);
+  }
+
+  .card-header {
+    padding: 20px 22px 16px;
+    border-bottom: 1px solid rgba(201,151,43,0.2);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .card-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .wajib .card-num  { background: var(--teal); color: #fff; }
+  .mustahil .card-num { background: var(--ruby); color: #fff; }
+  .jaiz .card-num   { background: var(--gold); color: #fff; }
+
+  .card-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    color: var(--ink);
+    direction: rtl;
+    text-align: right;
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .card-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .card-body {
+    padding: 16px 22px 20px;
+  }
+
+  .card-arti {
+    font-size: 13px;
+    color: #5a4a2a;
+    margin-bottom: 10px;
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .wajib .card-tag   { background: rgba(27,107,107,0.12); color: var(--teal); }
+  .mustahil .card-tag { background: rgba(139,26,26,0.12); color: var(--ruby); }
+  .jaiz .card-tag    { background: rgba(201,151,43,0.15); color: #8a5e00; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,7,3,0.75);
+    backdrop-filter: blur(6px);
+    z-index: 500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeoverlay .2s ease;
+  }
+  .modal-overlay.open { display: flex; }
+
+  @keyframes fadeoverlay {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .modal {
+    background: var(--cream);
+    border-radius: 20px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    animation: slideup .3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+  }
+
+  @keyframes slideup {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-header {
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid rgba(201,151,43,0.25);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    position: sticky; top: 0;
+    background: var(--cream);
+    z-index: 1;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .modal-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 42px;
+    direction: rtl;
+    text-align: right;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .modal-close {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(26,18,9,0.2);
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--ink);
+    flex-shrink: 0;
+    transition: background .2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-close:hover { background: rgba(26,18,9,0.08); }
+
+  .modal-body { padding: 28px 32px 36px; }
+
+  .modal-title {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .modal-meaning {
+    font-size: 14px;
+    color: #6a5030;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .modal-desc {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: #3a2e1a;
+    margin-bottom: 28px;
+    background: var(--parch2);
+    padding: 18px 20px;
+    border-radius: 10px;
+  }
+
+  .dalil-block {
+    margin-bottom: 22px;
+  }
+
+  .dalil-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dalil-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+    opacity: .2;
+  }
+
+  .dalil-naqli .dalil-label { color: var(--teal); }
+  .dalil-aqli  .dalil-label { color: var(--ruby); }
+
+  .dalil-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 22px;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    color: var(--ink);
+    background: rgba(27,107,107,0.06);
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border-right: 3px solid var(--teal);
+  }
+
+  .dalil-source {
+    font-size: 12px;
+    color: var(--teal);
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+
+  .dalil-terjemah {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #4a3a1a;
+    padding: 10px 14px;
+    background: rgba(27,107,107,0.04);
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+
+  .dalil-aqli-text {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #4a1a1a;
+    background: rgba(139,26,26,0.04);
+    padding: 14px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--ruby);
+  }
+
+  /* ── CATEGORY SECTIONS ── */
+  .cat-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 24px 28px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--ink) 0%, #3a2800 100%);
+    color: #fff;
+  }
+
+  .cat-icon { font-size: 32px; }
+
+  .cat-header-title {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold-lt);
+    margin-bottom: 2px;
+  }
+
+  .cat-header-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 28px;
+    direction: rtl;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.2;
+  }
+
+  .cat-header-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    max-width: 400px;
+  }
+
+  /* ── DIVIDER ── */
+  .ornament-divider {
+    text-align: center;
+    color: var(--gold);
+    font-size: 22px;
+    margin: 48px 0;
+    letter-spacing: 12px;
+    opacity: .5;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── INTRO PAGE ── */
+  .pengantar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+
+  .peng-card {
+    padding: 24px;
+    border-radius: 14px;
+    border: 1.5px solid;
+  }
+  .peng-card.wajib-c   { border-color: var(--teal);  background: rgba(27,107,107,0.05); }
+  .peng-card.mustahil-c{ border-color: var(--ruby);  background: rgba(139,26,26,0.05); }
+  .peng-card.jaiz-c    { border-color: var(--gold);  background: rgba(201,151,43,0.07); grid-column: 1 / -1; }
+
+  .peng-card-title {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .wajib-c   .peng-card-title { color: var(--teal); }
+  .mustahil-c .peng-card-title { color: var(--ruby); }
+  .jaiz-c    .peng-card-title { color: #8a5e00; }
+
+  .peng-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 24px;
+    direction: rtl;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .peng-desc { font-size: 13.5px; color: #4a3a20; line-height: 1.7; }
+
+  /* ── SIFAT RASUL ── */
+  .rasul-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .rasul-card {
+    padding: 20px;
+    background: var(--cream);
+    border-radius: 12px;
+    border: 1.5px solid rgba(201,151,43,0.25);
+    text-align: center;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .rasul-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+
+  .rasul-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 28px;
+    direction: rtl;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .rasul-name { font-weight: 700; font-size: 13px; color: var(--ink); margin-bottom: 2px; }
+  .rasul-arti { font-size: 12px; color: #6a5030; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 48px 24px;
+    font-size: 13px;
+  }
+  footer .footer-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 28px;
+    color: var(--gold-lt);
+    direction: rtl;
+    margin-bottom: 12px;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar {
+    position: fixed; top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    z-index: 9999;
+    width: 0%;
+    transition: width .1s;
+  }
+
+  /* ── TOUCH FEEDBACK ── */
+  @media (hover: none) {
+    .card:active      { transform: scale(0.97); box-shadow: 0 2px 10px var(--shadow); }
+    .rasul-card:active{ transform: scale(0.97); }
+    .nav-tab:active   { background: rgba(27,107,107,0.1); }
+  }
+
+  /* ── TABLET (max 768px) ── */
+  @media (max-width: 768px) {
+    .hero { min-height: 100svh; padding: 80px 20px 60px; }
+    .hero-mandala { width: 380px; height: 380px; }
+    .hero-stats { gap: 24px; }
+    .hero-stat-num { font-size: 28px; }
+    .hero-stat-label { font-size: 10px; }
+    .hero-sub { font-size: 13.5px; margin-bottom: 40px; }
+    .section { padding: 40px 16px; }
+    .cards-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .cat-header { padding: 20px; }
+    .pengantar-grid { grid-template-columns: 1fr; }
+    .peng-card.jaiz-c { grid-column: auto; }
+  }
+
+  /* ── MOBILE (max 480px) ── */
+  @media (max-width: 480px) {
+    /* Hero */
+    .hero { padding: 72px 16px 56px; min-height: 100svh; }
+    .hero-badge { font-size: 9px; letter-spacing: 2px; padding: 5px 14px; margin-bottom: 20px; }
+    .hero-arabic { font-size: 32px; margin-bottom: 12px; }
+    .hero-title { font-size: 20px; margin-bottom: 10px; }
+    .hero-sub { font-size: 13px; margin-bottom: 28px; max-width: 100%; }
+    .hero-stats { gap: 16px; }
+    .hero-stat-num { font-size: 26px; }
+    .hero-stat-label { font-size: 9px; letter-spacing: 1px; }
+    .hero-mandala { width: 280px; height: 280px; opacity: 0.05; }
+    .scroll-cue { font-size: 11px; bottom: 20px; }
+
+    /* Nav tabs — scrollable pill row */
+    .nav-tabs {
+      justify-content: flex-start;
+      padding: 0 4px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-tab {
+      padding: 12px 16px;
+      font-size: 12px;
+      letter-spacing: 0;
+      min-width: max-content;
+    }
+
+    /* Sections */
+    .section { padding: 28px 14px 40px; }
+    .section-title { font-size: 20px; margin-bottom: 16px; }
+    .section-eyebrow { font-size: 10px; letter-spacing: 2px; }
+
+    /* Intro box */
+    .intro-box { padding: 16px 16px; font-size: 13.5px; margin-bottom: 24px; }
+
+    /* Cards grid — single column on mobile */
+    .cards-grid { grid-template-columns: 1fr; gap: 12px; }
+    .card-header { padding: 14px 16px 12px; gap: 10px; }
+    .card-arabic { font-size: 22px; }
+    .card-name { font-size: 13px; }
+    .card-body { padding: 12px 16px 16px; }
+    .card-num { width: 30px; height: 30px; font-size: 12px; }
+
+    /* Cat header */
+    .cat-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 18px 16px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .cat-icon { font-size: 24px; }
+    .cat-header-title { font-size: 17px; }
+    .cat-header-arabic { font-size: 22px; }
+    .cat-header-desc { font-size: 12px; }
+
+    /* Pengantar grid */
+    .pengantar-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+    .peng-card { padding: 16px; }
+    .peng-card.jaiz-c { grid-column: auto; }
+    .peng-arabic { font-size: 20px; }
+    .peng-card-title { font-size: 14px; }
+
+    /* Rasul grid */
+    .rasul-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+    .rasul-card { padding: 14px 10px; }
+    .rasul-arabic { font-size: 22px; }
+    .rasul-name { font-size: 12px; }
+    .rasul-arti { font-size: 11px; }
+
+    /* Ornament divider */
+    .ornament-divider { margin: 28px 0; font-size: 18px; letter-spacing: 8px; }
+
+    /* Modal — full-screen bottom sheet on mobile */
+    .modal-overlay { padding: 0; align-items: flex-end; }
+    .modal {
+      border-radius: 20px 20px 0 0;
+      max-height: 92svh;
+      width: 100%;
+    }
+    .modal-header {
+      padding: 16px 18px 14px;
+      border-radius: 20px 20px 0 0;
+    }
+    .modal-arabic { font-size: 30px; }
+    .modal-title { font-size: 18px; }
+    .modal-meaning { font-size: 13px; margin-bottom: 14px; }
+    .modal-body { padding: 16px 18px 32px; }
+    .modal-desc { font-size: 13.5px; padding: 14px 14px; margin-bottom: 20px; }
+    .modal-close { width: 32px; height: 32px; font-size: 16px; }
+    .dalil-arabic { font-size: 19px; padding: 12px 14px; }
+    .dalil-terjemah { font-size: 13px; padding: 8px 12px; }
+    .dalil-aqli-text { font-size: 13px; padding: 12px 14px; }
+
+    /* Footer */
+    footer { padding: 36px 16px; }
+    footer .footer-arabic { font-size: 22px; }
+    footer p { font-size: 12px; }
+  }
+
+  /* ── VERY SMALL (max 360px) ── */
+  @media (max-width: 360px) {
+    .rasul-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 10px; }
+    .hero-stat-num { font-size: 22px; }
+    .nav-tab { padding: 11px 12px; font-size: 11px; }
+  }
+
+  /* ── VIDEO ── */
+  .video-wrapper {
+    background: var(--ink);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+    margin-bottom: 40px;
+  }
+
+  .video-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(201,151,43,0.2);
+  }
+
+  .video-badge {
+    background: var(--ruby);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .video-title-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  .video-caption {
+    padding: 12px 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    text-align: right;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  @media (max-width: 480px) {
+    .video-label { padding: 12px 14px; gap: 8px; flex-wrap: wrap; }
+    .video-title-text { font-size: 12px; }
+    .video-caption { padding: 10px 14px; font-size: 11px; }
+    .video-wrapper { border-radius: 14px; }
+  }
+
+  /* ── MODAL PULL HANDLE (mobile) ── */
+  .modal-handle {
+    display: none;
+    width: 40px; height: 4px;
+    background: rgba(26,18,9,0.2);
+    border-radius: 4px;
+    margin: 10px auto 0;
+  }
+  @media (max-width: 480px) {
+    .modal-handle { display: block; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-ornament"></div>
+  <svg class="hero-mandala" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="250" r="240" stroke="#C9972B" stroke-width=".5"/>
+    <circle cx="250" cy="250" r="200" stroke="#C9972B" stroke-width=".5"/>
+    <circle cx="250" cy="250" r="160" stroke="#C9972B" stroke-width=".5"/>
+    <circle cx="250" cy="250" r="120" stroke="#C9972B" stroke-width=".5"/>
+    <circle cx="250" cy="250" r="80"  stroke="#C9972B" stroke-width=".5"/>
+    <circle cx="250" cy="250" r="40"  stroke="#C9972B" stroke-width=".5"/>
+    <line x1="10"  y1="250" x2="490" y2="250" stroke="#C9972B" stroke-width=".5"/>
+    <line x1="250" y1="10"  x2="250" y2="490" stroke="#C9972B" stroke-width=".5"/>
+    <line x1="80"  y1="80"  x2="420" y2="420" stroke="#C9972B" stroke-width=".5"/>
+    <line x1="420" y1="80"  x2="80"  y2="420" stroke="#C9972B" stroke-width=".5"/>
+    <line x1="10"  y1="130" x2="490" y2="130" stroke="#C9972B" stroke-width=".3"/>
+    <line x1="10"  y1="370" x2="490" y2="370" stroke="#C9972B" stroke-width=".3"/>
+    <line x1="130" y1="10"  x2="130" y2="490" stroke="#C9972B" stroke-width=".3"/>
+    <line x1="370" y1="10"  x2="370" y2="490" stroke="#C9972B" stroke-width=".3"/>
+    <polygon points="250,15 280,50 320,25 310,65 350,50 330,85 370,80 340,110 375,115 340,140 370,155 330,165 355,185 310,185 325,210 280,200 285,230 250,215 215,230 220,200 175,210 190,185 145,185 170,165 130,155 160,140 125,115 160,110 130,80 170,85 150,50 190,65 180,25 220,50" stroke="#C9972B" stroke-width=".5" fill="none"/>
+  </svg>
+
+  <div class="hero-badge">Ilmu Tauhid · Mazhab Asy'ariyyah</div>
+
+  <div class="hero-arabic">عقائد الإيمان الخمسون</div>
+  <h1 class="hero-title">Aqoidul Iman yang Lima Puluh</h1>
+  <p class="hero-sub">Sifat Wajib, Mustahil, dan Jaiz bagi Allah سبحانه وتعالى beserta Sifat Rasul — menurut akidah Ahlusunnah wal Jama'ah mazhab Asy'ari</p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">20</span>
+      <span class="hero-stat-label">Sifat Wajib Allah</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">20</span>
+      <span class="hero-stat-label">Sifat Mustahil Allah</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">1</span>
+      <span class="hero-stat-label">Sifat Jaiz Allah</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">4+4+1</span>
+      <span class="hero-stat-label">Sifat Para Rasul</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue" onclick="document.querySelector('.nav-tabs').scrollIntoView()">▼ Mulai Belajar</div>
+</section>
+
+<!-- NAV -->
+<nav class="nav-tabs" id="navTabs">
+  <button class="nav-tab active" onclick="showSection('pengantar',this)">Pengantar</button>
+  <button class="nav-tab" onclick="showSection('wajib',this)">Sifat Wajib Allah</button>
+  <button class="nav-tab" onclick="showSection('mustahil',this)">Sifat Mustahil</button>
+  <button class="nav-tab" onclick="showSection('jaiz',this)">Sifat Jaiz</button>
+  <button class="nav-tab" onclick="showSection('rasul',this)">Sifat Rasul</button>
+  <button class="nav-tab" onclick="showSection('video',this)">▶ Video</button>
+</nav>
+
+<!-- ═══════════════════════════════════ PENGANTAR ═══════════════════════════════════ -->
+<section class="section active" id="pengantar">
+  <div class="section-eyebrow">Pendahuluan</div>
+  <h2 class="section-title">Apa itu Aqoidul Iman yang 50?</h2>
+
+  <div class="intro-box reveal">
+    <strong>Aqoidul Iman yang 50</strong> adalah pokok-pokok keyakinan dalam ilmu tauhid yang wajib diketahui oleh setiap Muslim mukallaf. Ilmu ini merupakan inti dari ajaran <em>Ahlusunnah wal Jama'ah</em> sebagaimana dirumuskan oleh Imam Abu al-Hasan al-Asy'ari (w. 324 H) dan para ulama sesudahnya, di antaranya Imam al-Sanusi dalam kitab <em>Umm al-Barahin</em>.
+    <br><br>
+    Jumlah lima puluh diperoleh dari: <strong>20 sifat wajib Allah + 20 sifat mustahil Allah + 1 sifat jaiz Allah + 4 sifat wajib Rasul + 4 sifat mustahil Rasul + 1 sifat jaiz Rasul = 50 sifat</strong>.
+  </div>
+
+  <div class="pengantar-grid reveal">
+    <div class="peng-card wajib-c">
+      <div class="peng-arabic">الواجب</div>
+      <div class="peng-card-title">Sifat Wajib</div>
+      <div class="peng-desc">Sifat yang pasti ada dan tidak mungkin tidak ada pada Allah atau Rasul. Meniadakannya berarti mustahil secara akal.</div>
+    </div>
+    <div class="peng-card mustahil-c">
+      <div class="peng-arabic">المستحيل</div>
+      <div class="peng-card-title">Sifat Mustahil</div>
+      <div class="peng-desc">Sifat yang pasti tidak ada dan tidak mungkin ada pada Allah atau Rasul. Kebalikan dari sifat wajib.</div>
+    </div>
+    <div class="peng-card jaiz-c">
+      <div class="peng-arabic">الجائز</div>
+      <div class="peng-card-title">Sifat Jaiz (Boleh)</div>
+      <div class="peng-desc">Sifat yang boleh ada dan boleh tidak ada. Bagi Allah: <em>ja'iz</em> berbuat sesuatu atau meninggalkannya. Bagi Rasul: diperbolehkan mengalami kebutuhan manusiawi seperti makan, tidur, dan sakit yang tidak mengurangi derajat kenabian.</div>
+    </div>
+  </div>
+
+  <div class="ornament-divider reveal">❧ ✦ ❧</div>
+
+  <div class="section-eyebrow">Dasar Mempelajari Ilmu Tauhid</div>
+  <div class="intro-box reveal">
+    <strong>Dalil Naqli — Al-Qur'an Surah Muhammad (47): 19</strong><br>
+    <div style="font-family:'Amiri',serif;font-size:22px;direction:rtl;text-align:right;margin:12px 0;line-height:1.8;color:var(--ink);">
+      فَاعْلَمْ أَنَّهُۥ لَآ إِلَٰهَ إِلَّا ٱللَّهُ وَٱسْتَغْفِرْ لِذَنۢبِكَ
+    </div>
+    <em>"Maka ketahuilah, bahwa tidak ada Tuhan yang berhak disembah selain Allah dan mohonlah ampunan atas dosamu."</em>
+    <br><br>
+    Ayat ini memerintahkan untuk <strong>mengetahui</strong> (فَاعْلَمْ) terlebih dahulu sebelum beribadah — menunjukkan wajibnya ilmu tauhid.
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SIFAT WAJIB ═══════════════════════════════════ -->
+<section class="section" id="wajib">
+  <div class="cat-header reveal">
+    <div class="cat-icon">✦</div>
+    <div>
+      <div class="cat-header-title">Sifat Wajib bagi Allah</div>
+      <div class="cat-header-arabic">الصفات الواجبة لله تعالى</div>
+      <div class="cat-header-desc">20 sifat yang pasti ada pada Allah ﷻ dan mustahil tidak ada — beserta dalil aqli & naqli</div>
+    </div>
+  </div>
+
+  <div class="cards-grid" id="wajibGrid"></div>
+</section>
+
+<!-- ═══════════════════════════════════ SIFAT MUSTAHIL ═══════════════════════════════════ -->
+<section class="section" id="mustahil">
+  <div class="cat-header reveal" style="background: linear-gradient(135deg, #3a0000 0%, #1a0a0a 100%);">
+    <div class="cat-icon">✦</div>
+    <div>
+      <div class="cat-header-title">Sifat Mustahil bagi Allah</div>
+      <div class="cat-header-arabic">الصفات المستحيلة لله تعالى</div>
+      <div class="cat-header-desc">20 sifat yang pasti tidak ada pada Allah ﷻ — kebalikan dari sifat wajib</div>
+    </div>
+  </div>
+
+  <div class="cards-grid" id="mustahilGrid"></div>
+</section>
+
+<!-- ═══════════════════════════════════ SIFAT JAIZ ═══════════════════════════════════ -->
+<section class="section" id="jaiz">
+  <div class="cat-header reveal" style="background: linear-gradient(135deg, #2a1a00 0%, #3a2200 100%);">
+    <div class="cat-icon">✦</div>
+    <div>
+      <div class="cat-header-title">Sifat Jaiz bagi Allah</div>
+      <div class="cat-header-arabic">الصفة الجائزة لله تعالى</div>
+      <div class="cat-header-desc">Satu sifat yang boleh ada dan boleh tidak ada pada Allah ﷻ</div>
+    </div>
+  </div>
+
+  <div class="cards-grid" id="jaizGrid"></div>
+
+  <div class="ornament-divider reveal">❧ ✦ ❧</div>
+
+  <div class="intro-box reveal">
+    <strong>Catatan Penting:</strong> Sifat jaiz bagi Allah bukanlah berarti Allah lemah atau ragu. Justru ini menegaskan kemahakuasaan-Nya: Allah <em>bebas</em> menciptakan atau tidak menciptakan sesuatu, memberikan nikmat atau tidak, sesuai hikmah dan kehendak-Nya yang mutlak. Tidak ada kewajiban apapun bagi Allah dari luar diri-Nya.
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SIFAT RASUL ═══════════════════════════════════ -->
+<section class="section" id="rasul">
+  <div class="section-eyebrow">Para Nabi & Rasul</div>
+  <h2 class="section-title">Sifat Wajib, Mustahil & Jaiz bagi Para Rasul</h2>
+
+  <div class="intro-box reveal">
+    Terdapat <strong>9 sifat Rasul</strong> yang wajib diketahui: 4 sifat wajib, 4 sifat mustahil (lawannya), dan 1 sifat jaiz. Meyakini sifat-sifat ini adalah bagian dari iman yang sahih kepada para nabi dan rasul Allah.
+  </div>
+
+  <div class="cat-header reveal" style="background: linear-gradient(135deg, #0a1a2a 0%, #0d2035 100%); margin-bottom: 24px;">
+    <div class="cat-icon">🌙</div>
+    <div>
+      <div class="cat-header-title" style="color: #7EC8E3;">Sifat Wajib Rasul</div>
+      <div class="cat-header-arabic" style="color: rgba(255,255,255,0.65);">الصفات الواجبة للرسل</div>
+      <div class="cat-header-desc">4 sifat yang pasti ada pada setiap Nabi dan Rasul</div>
+    </div>
+  </div>
+  <div class="rasul-grid reveal" id="rasulWajibGrid"></div>
+
+  <div class="cat-header reveal" style="background: linear-gradient(135deg, #1a0a1a 0%, #250d25 100%); margin-bottom: 24px; margin-top: 40px;">
+    <div class="cat-icon">🌙</div>
+    <div>
+      <div class="cat-header-title" style="color: #E8A0E8;">Sifat Mustahil Rasul</div>
+      <div class="cat-header-arabic" style="color: rgba(255,255,255,0.65);">الصفات المستحيلة للرسل</div>
+      <div class="cat-header-desc">4 sifat yang mustahil ada pada para Rasul</div>
+    </div>
+  </div>
+  <div class="rasul-grid reveal" id="rasulMustahilGrid"></div>
+
+  <div class="cat-header reveal" style="background: linear-gradient(135deg, #1a1a00 0%, #252500 100%); margin-bottom: 24px; margin-top: 40px;">
+    <div class="cat-icon">🌙</div>
+    <div>
+      <div class="cat-header-title" style="color: #E8D88A;">Sifat Jaiz Rasul</div>
+      <div class="cat-header-arabic" style="color: rgba(255,255,255,0.65);">الصفة الجائزة للرسل</div>
+      <div class="cat-header-desc">Sifat yang boleh ada boleh tidak</div>
+    </div>
+  </div>
+  <div class="rasul-grid reveal" id="rasulJaizGrid"></div>
+</section>
+
+<!-- ═══════════════════════════════════ VIDEO ═══════════════════════════════════ -->
+<section class="section" id="video">
+  <div class="section-eyebrow">Multimedia Pembelajaran</div>
+  <h2 class="section-title">Video Penjelasan Aqoidul Iman</h2>
+
+  <div class="intro-box reveal">
+    Tonton video berikut sebagai pelengkap pembelajaran Aqoidul Iman yang 50. Video ini membantu memahami materi secara lebih mendalam melalui penjelasan lisan dari para ulama dan ustadz.
+  </div>
+
+  <div class="video-wrapper reveal">
+    <div class="video-label">
+      <span class="video-badge">▶ Video Pembelajaran</span>
+      <span class="video-title-text">Aqoidul Iman yang 50 — Mazhab Asy'ari</span>
+    </div>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/uK0NmYDqO88?si=_cGIRf9xlNSkEGxG"
+        title="Aqoidul Iman yang 50"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-caption">
+      Sumber: YouTube · Ilmu Tauhid Ahlusunnah wal Jama'ah
+    </div>
+  </div>
+
+  <div class="ornament-divider reveal">❧ ✦ ❧</div>
+
+  <div class="intro-box reveal">
+    <strong>Tips Belajar:</strong> Gunakan video ini bersama materi tertulis di tab-tab sebelumnya. Setelah menonton, klik setiap kartu sifat untuk memperdalam pemahaman melalui dalil aqli dan naqlinya secara lengkap.
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div>
+        <div class="modal-arabic" id="mArabic"></div>
+        <div class="modal-title"  id="mTitle"></div>
+        <div class="modal-meaning" id="mMeaning"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-desc" id="mDesc"></div>
+      <div id="mDalil"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-arabic">سُبْحَانَكَ لَا عِلْمَ لَنَا إِلَّا مَا عَلَّمْتَنَا</div>
+  <p style="margin-bottom:6px;">"Maha Suci Engkau, tidak ada yang kami ketahui selain dari apa yang telah Engkau ajarkan kepada kami." — QS. Al-Baqarah: 32</p>
+  <p style="font-size:12px; margin-top: 16px;">Disusun berdasarkan kitab <em>Umm al-Barahin</em> (As-Sanusiyyah) dan syarahnya · Mazhab Asy'ariyyah</p>
+</footer>
+
+<script>
+// ═══════════════ DATA ═══════════════
+
+const sifatWajib = [
+  {
+    no: 1, arabic: "الوُجُودُ", name: "Wujud", arti: "Ada",
+    desc: "Allah ta'ala pasti ada (maujud). Wujud Allah adalah wujud yang hakiki, tidak berawal dan tidak berakhir, tidak membutuhkan sebab dari luar untuk ada.",
+    naqli_ar: "ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلْحَيُّ ٱلْقَيُّومُ",
+    naqli_src: "QS. Al-Baqarah (2): 255 (Ayat Kursi)",
+    naqli_tr: "Allah, tidak ada Tuhan yang berhak disembah selain Dia, Yang Mahahidup, Yang terus menerus mengurus (makhluk-Nya).",
+    aqli: "Alam semesta ini ada (maujud). Sesuatu yang ada pasti membutuhkan yang mengadakan. Mustahil sesuatu mengadakan dirinya sendiri. Maka pasti ada Zat Yang Mengadakan alam ini — yaitu Allah ﷻ."
+  },
+  {
+    no: 2, arabic: "الْقِدَمُ", name: "Qidam", arti: "Dahulu (Azali)",
+    desc: "Allah ta'ala ada sejak dahulu kala tanpa permulaan. Tidak ada sesuatu sebelum Allah, karena jika Allah dahulunya tidak ada, maka Allah itu baru (hadits), dan sesuatu yang baru pasti membutuhkan yang mengadakan — mustahil bagi Allah.",
+    naqli_ar: "هُوَ ٱلْأَوَّلُ وَٱلْءَاخِرُ",
+    naqli_src: "QS. Al-Hadid (57): 3",
+    naqli_tr: "Dia-lah Yang Awal dan Yang Akhir.",
+    aqli: "Seandainya Allah itu baru (ada setelah tidak ada), maka tentu ada yang mengadakan-Nya. Yang mengadakan-Nya tentu lebih dahulu dari-Nya. Dan itu mustahil karena menafikan keazalian-Nya. Maka akal menetapkan Allah pasti Qidam (tidak berawal)."
+  },
+  {
+    no: 3, arabic: "الْبَقَاءُ", name: "Baqa'", arti: "Kekal",
+    desc: "Allah ta'ala kekal selamanya tanpa akhir. Mustahil Allah mengalami kebinasaan atau ketiadaan. Sifat kekal ini lazim dari sifat Qidam — karena yang tidak berawal, maka tidak berakhir.",
+    naqli_ar: "كُلُّ مَنْ عَلَيْهَا فَانٍ ۝ وَيَبْقَىٰ وَجْهُ رَبِّكَ ذُو ٱلْجَلَٰلِ وَٱلْإِكْرَامِ",
+    naqli_src: "QS. Ar-Rahman (55): 26-27",
+    naqli_tr: "Semua yang ada di bumi itu akan binasa, dan tetap kekal Wajah Tuhanmu yang mempunyai kebesaran dan kemuliaan.",
+    aqli: "Jika Allah bisa binasa, maka Allah membutuhkan sesuatu yang membinasakannya — itu menafikan ke-Mahakuasaan-Nya. Dan sesuatu yang bisa binasa tidak layak disembah. Maka akal menetapkan Allah pasti Baqa'."
+  },
+  {
+    no: 4, arabic: "الْمُخَالَفَةُ لِلْحَوَادِثِ", name: "Mukhalafah lil Hawadits", arti: "Berbeda dengan Makhluk",
+    desc: "Allah ta'ala berbeda dengan seluruh makhluk-Nya dalam segala hal — zat, sifat, maupun perbuatan-Nya. Tidak ada apapun yang menyerupai Allah.",
+    naqli_ar: "لَيْسَ كَمِثْلِهِۦ شَيْءٌ ۖ وَهُوَ ٱلسَّمِيعُ ٱلْبَصِيرُ",
+    naqli_src: "QS. Asy-Syura (42): 11",
+    naqli_tr: "Tidak ada sesuatupun yang serupa dengan Dia, dan Dia-lah yang Maha Mendengar lagi Maha Melihat.",
+    aqli: "Jika Allah menyerupai makhluk, maka Allah termasuk makhluk dan butuh kepada yang menciptakan-Nya. Itu kontradiksi dengan ke-Ilahian-Nya. Maka akal menetapkan Allah pasti berbeda dari semua makhluk."
+  },
+  {
+    no: 5, arabic: "الْقِيَامُ بِنَفْسِهِ", name: "Qiyamuhu binafsihi", arti: "Berdiri Sendiri",
+    desc: "Allah ta'ala berdiri sendiri — tidak membutuhkan tempat, pencipta, atau sesuatu apapun. Allah tidak bergantung kepada apapun sedangkan semua bergantung kepada-Nya.",
+    naqli_ar: "يَٰٓأَيُّهَا ٱلنَّاسُ أَنتُمُ ٱلْفُقَرَآءُ إِلَى ٱللَّهِ ۖ وَٱللَّهُ هُوَ ٱلْغَنِيُّ ٱلْحَمِيدُ",
+    naqli_src: "QS. Fatir (35): 15",
+    naqli_tr: "Wahai manusia, kamulah yang memerlukan Allah; dan Allah Dia-lah Yang Mahakaya (tidak memerlukan sesuatu) lagi Maha Terpuji.",
+    aqli: "Jika Allah butuh tempat untuk berdiri, berarti tempat lebih dahulu ada dari Allah — itu menafikan sifat Qidam-Nya. Sesuatu yang bergantung kepada lain tidak layak menjadi Tuhan."
+  },
+  {
+    no: 6, arabic: "الْوَحْدَانِيَّةُ", name: "Wahdaniyyah", arti: "Esa / Satu",
+    desc: "Allah ta'ala Maha Esa: Esa dalam Zat, Esa dalam Sifat, dan Esa dalam Perbuatan. Tidak ada sekutu, tandingan, atau yang menyerupai-Nya.",
+    naqli_ar: "قُلْ هُوَ ٱللَّهُ أَحَدٌ ۝ ٱللَّهُ ٱلصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ",
+    naqli_src: "QS. Al-Ikhlas (112): 1-4",
+    naqli_tr: "Katakanlah: 'Dia-lah Allah, Yang Maha Esa. Allah adalah Tuhan yang bergantung kepada-Nya segala sesuatu. Dia tidak beranak dan tidak diperanakkan, dan tidak ada seorangpun yang setara dengan Dia.'",
+    aqli: "Jika ada dua tuhan, salah satu harus mengalah kepada yang lain, atau keduanya saling ketergantungan — keduanya mustahil bagi Tuhan. Lebih lanjut, dua Tuhan akan mengakibatkan benturan kehendak yang menghalangi teraturnya alam semesta. Ini disebut dalil Tamanu'."
+  },
+  {
+    no: 7, arabic: "الْقُدْرَةُ", name: "Qudrah", arti: "Berkuasa",
+    desc: "Allah ta'ala Mahakuasa atas segala sesuatu. Tidak ada yang dapat menghalangi kehendak-Nya. Semua yang mungkin ada dan tiada, berada dalam genggaman kekuasaan-Nya.",
+    naqli_ar: "إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+    naqli_src: "QS. Al-Baqarah (2): 20",
+    naqli_tr: "Sesungguhnya Allah Mahakuasa atas segala sesuatu.",
+    aqli: "Jika Allah tidak memiliki kekuasaan, maka Ia tidak dapat menciptakan alam semesta. Kenyataan alam ada menunjukkan ada Zat Yang Mahakuasa yang mengadakannya. Lemah adalah sifat kekurangan yang mustahil bagi Allah."
+  },
+  {
+    no: 8, arabic: "الْإِرَادَةُ", name: "Iradah", arti: "Berkehendak",
+    desc: "Allah ta'ala memiliki kehendak yang mutlak bebas. Tidak ada yang memaksa Allah atau mengharuskan-Nya berbuat sesuatu. Semua yang ada di alam ini adalah hasil kehendak-Nya.",
+    naqli_ar: "إِنَّمَآ أَمْرُهُۥٓ إِذَآ أَرَادَ شَيْـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ",
+    naqli_src: "QS. Ya-Sin (36): 82",
+    naqli_tr: "Sesungguhnya urusan-Nya apabila Dia menghendaki sesuatu hanyalah berkata kepadanya: 'Jadilah!', maka jadilah ia.",
+    aqli: "Jika Allah tidak memiliki kehendak, maka semua perbuatan-Nya bersifat paksaan — itu menafikan kekuasaan-Nya. Pula, jika dua hal yang kontradiksi bisa sama-sama terwujud, itu mustahil. Maka yang menentukan mana yang terwujud adalah kehendak Allah."
+  },
+  {
+    no: 9, arabic: "الْعِلْمُ", name: "'Ilm", arti: "Mengetahui",
+    desc: "Allah ta'ala Maha Mengetahui segala sesuatu: yang tersembunyi dan yang tampak, yang telah lalu dan yang akan datang, yang besar dan yang sekecil atom.",
+    naqli_ar: "وَعِندَهُۥ مَفَاتِحُ ٱلْغَيْبِ لَا يَعْلَمُهَآ إِلَّا هُوَ",
+    naqli_src: "QS. Al-An'am (6): 59",
+    naqli_tr: "Dan pada sisi Allah-lah kunci-kunci semua yang gaib; tidak ada yang mengetahuinya kecuali Dia.",
+    aqli: "Keteraturan alam semesta yang luar biasa — dari orbit planet hingga DNA makhluk hidup — mustahil terjadi tanpa Pencipta yang Maha Mengetahui. Kejahilan adalah sifat kekurangan yang mustahil bagi Allah."
+  },
+  {
+    no: 10, arabic: "الْحَيَاةُ", name: "Hayah", arti: "Hidup",
+    desc: "Allah ta'ala Mahahidup dengan kehidupan yang hakiki, azali, abadi, tidak mati, tidak tidur, tidak lengah. Kehidupan Allah tidak bergantung pada ruh atau badan.",
+    naqli_ar: "وَتَوَكَّلْ عَلَى ٱلْحَيِّ ٱلَّذِي لَا يَمُوتُ",
+    naqli_src: "QS. Al-Furqan (25): 58",
+    naqli_tr: "Dan bertawakkallah kepada Allah Yang Mahahidup (kekal) Yang tidak mati.",
+    aqli: "Kekuasaan, kehendak, dan ilmu mustahil dimiliki oleh yang mati. Allah yang Mahakuasa, Maha Berkehendak, dan Maha Mengetahui pasti Mahahidup. Mati adalah tanda kekurangan yang mustahil bagi Allah."
+  },
+  {
+    no: 11, arabic: "السَّمْعُ", name: "Sama'", arti: "Mendengar",
+    desc: "Allah ta'ala Maha Mendengar semua suara, bisikan, bahkan niat yang tersembunyi di dalam hati, tanpa alat pendengaran, tanpa batas ruang dan waktu.",
+    naqli_ar: "وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
+    naqli_src: "QS. Al-Baqarah (2): 227",
+    naqli_tr: "Dan Allah Maha Mendengar lagi Maha Mengetahui.",
+    aqli: "Allah yang Maha Sempurna pasti memiliki semua sifat kesempurnaan. Mendengar adalah sifat sempurna. Sesuatu yang tidak mendengar lebih rendah dari yang mendengar — mustahil bagi Allah Yang Maha Sempurna. Pendengaran Allah tidak seperti pendengaran makhluk."
+  },
+  {
+    no: 12, arabic: "الْبَصَرُ", name: "Bashar", arti: "Melihat",
+    desc: "Allah ta'ala Maha Melihat segala sesuatu: yang nyata dan yang tersembunyi, sekecil zarrah di kegelapan malam. Tanpa alat, tanpa penghalang.",
+    naqli_ar: "إِنَّ ٱللَّهَ كَانَ سَمِيعًا بَصِيرًا",
+    naqli_src: "QS. An-Nisa' (4): 58",
+    naqli_tr: "Sesungguhnya Allah Maha Mendengar lagi Maha Melihat.",
+    aqli: "Melihat adalah sifat sempurna. Yang tidak bisa melihat lebih rendah derajatnya dari yang bisa melihat. Mustahil Allah Yang Maha Sempurna memiliki kekurangan. Maka Allah pasti Maha Melihat."
+  },
+  {
+    no: 13, arabic: "الْكَلَامُ", name: "Kalam", arti: "Berfirman",
+    desc: "Allah ta'ala bersifat Kalam — berbicara/berfirman. Kalam Allah adalah sifat Zat-Nya yang azali, tidak serupa dengan ucapan makhluk, tidak menggunakan huruf, suara, atau waktu.",
+    naqli_ar: "وَكَلَّمَ ٱللَّهُ مُوسَىٰ تَكْلِيمًا",
+    naqli_src: "QS. An-Nisa' (4): 164",
+    naqli_tr: "Dan Allah telah berbicara kepada Musa dengan langsung.",
+    aqli: "Al-Qur'an adalah Kalamullah yang diturunkan. Firman menunjukkan sifat Kalam pada Allah. Bisu adalah kekurangan yang mustahil bagi Allah Yang Maha Sempurna. Kalam Allah berbeda dengan kalam makhluk."
+  },
+  {
+    no: 14, arabic: "كَوْنُهُۥ قَادِرًا", name: "Kaunuhu Qadiran", arti: "Keadaan-Nya Yang Berkuasa",
+    desc: "Ini adalah sifat yang menunjukkan keadaan (kaun) Allah sebagai Zat Yang Berkuasa — yaitu bahwa Allah bukan hanya memiliki sifat Qudrah, tetapi Dzat-Nya sendiri bersifat Maha Berkuasa secara hakiki dan azali.",
+    naqli_ar: "وَكَانَ ٱللَّهُ عَلَىٰ كُلِّ شَيْءٍ مُّقْتَدِرًا",
+    naqli_src: "QS. Al-Kahfi (18): 45",
+    naqli_tr: "Dan adalah Allah Mahakuasa atas segala sesuatu.",
+    aqli: "Sifat Kaun (keadaan) merupakan penjelasan lebih mendalam bahwa sifat Qudrah bukan sekadar sifat tambahan, melainkan hakikat keberadaan Allah itu sendiri adalah Mahakuasa. Ini membedakan pemahaman Asy'ari dari teolog lainnya."
+  },
+  {
+    no: 15, arabic: "كَوْنُهُۥ مُرِيدًا", name: "Kaunuhu Muridan", arti: "Keadaan-Nya Yang Berkehendak",
+    desc: "Keadaan Allah sebagai Zat Yang Berkehendak secara azali. Menunjukkan bahwa kehendak Allah bukan atribut terpisah dari Zat-Nya, melainkan hakikat ke-Ilahian-Nya.",
+    naqli_ar: "فَعَّالٌ لِّمَا يُرِيدُ",
+    naqli_src: "QS. Al-Buruj (85): 16",
+    naqli_tr: "Mahakuasa berbuat apa yang Dia kehendaki.",
+    aqli: "Keadaan (kaun) Allah sebagai Yang Berkehendak adalah konsekuensi logis dari ke-Maha Sempurna-an Allah. Sesuatu yang tidak memiliki kehendak adalah benda mati — mustahil bagi Zat Yang Mahakuasa."
+  },
+  {
+    no: 16, arabic: "كَوْنُهُۥ عَالِمًا", name: "Kaunuhu 'Aliman", arti: "Keadaan-Nya Yang Mengetahui",
+    desc: "Keadaan Allah sebagai Zat Yang Maha Mengetahui secara azali dan hakiki. Ilmu Allah meliputi segala sesuatu tanpa terkecuali.",
+    naqli_ar: "وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ",
+    naqli_src: "QS. Al-An'am (6): 101",
+    naqli_tr: "Dan Dia Maha Mengetahui segala sesuatu.",
+    aqli: "Kejahilan menghalangi kesempurnaan. Allah Yang Maha Sempurna mustahil bodoh. Keadaan-Nya sebagai Yang Mengetahui adalah hakikat yang tidak terpisahkan dari ke-Ilahian-Nya."
+  },
+  {
+    no: 17, arabic: "كَوْنُهُۥ حَيًّا", name: "Kaunuhu Hayyan", arti: "Keadaan-Nya Yang Hidup",
+    desc: "Keadaan Allah sebagai Zat Yang Mahahidup secara azali dan abadi. Kehidupan Allah berbeda mutlak dari kehidupan makhluk.",
+    naqli_ar: "ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلْحَيُّ ٱلْقَيُّومُ",
+    naqli_src: "QS. Ali 'Imran (3): 2",
+    naqli_tr: "Allah, tidak ada Tuhan yang berhak disembah selain Dia, Yang Mahahidup, Yang terus-menerus mengurus makhluk-Nya.",
+    aqli: "Kematian adalah ketidaksempurnaan. Hidup-Nya Allah adalah prasyarat bagi semua sifat-Nya yang lain: Qudrah, Iradah, dan 'Ilm tidak bisa ada tanpa kehidupan."
+  },
+  {
+    no: 18, arabic: "كَوْنُهُۥ سَمِيعًا", name: "Kaunuhu Sami'an", arti: "Keadaan-Nya Yang Mendengar",
+    desc: "Keadaan Allah sebagai Zat Yang Maha Mendengar secara azali. Pendengaran Allah meliputi semua suara tanpa terbatas jarak, waktu, atau penghalang.",
+    naqli_ar: "إِنَّهُۥ هُوَ ٱلسَّمِيعُ ٱلْعَلِيمُ",
+    naqli_src: "QS. Al-Baqarah (2): 137",
+    naqli_tr: "Sesungguhnya Dia Maha Mendengar lagi Maha Mengetahui.",
+    aqli: "Tuli adalah kekurangan. Allah Yang Sempurna mustahil tuli. Keadaan-Nya sebagai Yang Mendengar merupakan kesempurnaan mutlak yang melekat pada Zat Allah."
+  },
+  {
+    no: 19, arabic: "كَوْنُهُۥ بَصِيرًا", name: "Kaunuhu Bashiran", arti: "Keadaan-Nya Yang Melihat",
+    desc: "Keadaan Allah sebagai Zat Yang Maha Melihat secara azali. Penglihatan Allah meliputi segala yang nampak dan yang tersembunyi.",
+    naqli_ar: "إِنَّ ٱللَّهَ بِمَا تَعْمَلُونَ بَصِيرٌ",
+    naqli_src: "QS. Al-Hujurat (49): 18",
+    naqli_tr: "Sesungguhnya Allah Maha Melihat apa yang kamu kerjakan.",
+    aqli: "Buta adalah kekurangan. Allah Yang Maha Sempurna mustahil buta. Penglihatan-Nya mencakup semua yang ada, tanpa memerlukan cahaya atau mata seperti makhluk."
+  },
+  {
+    no: 20, arabic: "كَوْنُهُۥ مُتَكَلِّمًا", name: "Kaunuhu Mutakalliman", arti: "Keadaan-Nya Yang Berfirman",
+    desc: "Keadaan Allah sebagai Zat Yang berfirman secara azali. Al-Qur'an adalah Kalamullah yang diturunkan, Kalam yang terdiri dari huruf dan suara adalah ekspresi Kalam Nafsiyah (firman batiniah) Allah yang azali.",
+    naqli_ar: "وَمَن يَعْصِ ٱللَّهَ وَرَسُولَهُۥ فَإِنَّ لَهُۥ نَارَ جَهَنَّمَ",
+    naqli_src: "QS. Al-Jin (72): 23 — Al-Qur'an sebagai Kalam Allah",
+    naqli_tr: "Dan Al-Qur'an ini adalah wahyu (Kalam) Allah yang diturunkan kepada hamba-hamba-Nya.",
+    aqli: "Bisu adalah kekurangan yang mustahil bagi Allah Yang Maha Sempurna. Keadaan Allah sebagai Yang berfirman merupakan hakikat bahwa Al-Qur'an benar-benar datang dari Allah, bukan ciptaan makhluk."
+  }
+];
+
+const sifatMustahil = [
+  { no:1,  arabic:"الْعَدَمُ",          name:"Adam",             arti:"Tiada",              lawannya:"Wujud",             desc:"Mustahil Allah tidak ada (tiada). Karena jika Allah tidak ada, maka alam semesta ini tidak akan pernah ada. Kenyataan adanya alam membuktikan ada yang mengadakannya." },
+  { no:2,  arabic:"الْحُدُوثُ",         name:"Huduts",           arti:"Baru (Ada Permulaan)",lawannya:"Qidam",             desc:"Mustahil Allah baru ada (ada permulaannya). Sesuatu yang baru pasti butuh yang mengadakan. Jika Allah baru, siapa yang mengadakan Allah? Ini mustahil secara akal." },
+  { no:3,  arabic:"الْفَنَاءُ",         name:"Fana'",            arti:"Rusak/Binasa",        lawannya:"Baqa'",             desc:"Mustahil Allah binasa atau berakhir. Sesuatu yang bisa binasa tidak layak disembah karena tidak dapat diandalkan. Allah Maha Kekal selamanya." },
+  { no:4,  arabic:"الْمُمَاثَلَةُ",    name:"Mumatslah lil Hawadits",arti:"Menyerupai Makhluk",lawannya:"Mukhalafah",     desc:"Mustahil Allah menyerupai makhluk. Jika Allah serupa makhluk, berarti Allah terbatas, lemah, dan butuh — semua itu mustahil bagi Allah." },
+  { no:5,  arabic:"الِاحْتِيَاجُ",     name:"Ihtiyaj",          arti:"Membutuhkan Yang Lain",lawannya:"Qiyamuhu binafsihi",desc:"Mustahil Allah butuh kepada siapapun atau apapun. Yang butuh adalah makhluk; Allah adalah Pencipta yang Mahakaya dari semua kebutuhan." },
+  { no:6,  arabic:"التَّعَدُّدُ",      name:"Ta'addud",         arti:"Berbilang/Lebih dari Satu",lawannya:"Wahdaniyyah", desc:"Mustahil Allah lebih dari satu. Dua tuhan mustahil karena pasti terjadi konflik kehendak (dalil Tamanu') yang menghancurkan keteraturan alam." },
+  { no:7,  arabic:"الْعَجْزُ",         name:"'Ajz",             arti:"Lemah",               lawannya:"Qudrah",           desc:"Mustahil Allah lemah. Kelemahan adalah ketidaksempurnaan yang mustahil bagi Allah Yang Mahakuasa. Semua yang ada di alam ini bukti kekuasaan-Nya." },
+  { no:8,  arabic:"الْكَرَاهَةُ",      name:"Karahah",          arti:"Terpaksa",            lawannya:"Iradah",            desc:"Mustahil Allah terpaksa. Jika Allah terpaksa, berarti ada yang lebih berkuasa dari-Nya. Semua perbuatan Allah adalah atas kehendak-Nya yang bebas mutlak." },
+  { no:9,  arabic:"الْجَهْلُ",         name:"Jahl",             arti:"Bodoh/Tidak Mengetahui",lawannya:"'Ilm",           desc:"Mustahil Allah bodoh (tidak mengetahui). Kejahilan adalah kekurangan. Allah Yang Maha Sempurna pasti Maha Mengetahui segala sesuatu tanpa kecuali." },
+  { no:10, arabic:"الْمَوْتُ",         name:"Maut",             arti:"Mati",                lawannya:"Hayah",             desc:"Mustahil Allah mati. Kematian adalah ketidakmampuan yang mustahil bagi Allah. Allah Mahahidup dan tidak akan pernah mati." },
+  { no:11, arabic:"الصَّمَمُ",         name:"Shamam",           arti:"Tuli",                lawannya:"Sama'",             desc:"Mustahil Allah tuli. Ketulian adalah kekurangan indrawi yang mustahil bagi Zat Yang Maha Sempurna. Allah Maha Mendengar segala sesuatu." },
+  { no:12, arabic:"الْعَمَى",          name:"'Ama",             arti:"Buta",                lawannya:"Bashar",            desc:"Mustahil Allah buta. Kebutaan adalah ketidaksempurnaan yang mustahil bagi Allah Yang Maha Melihat segala sesuatu tanpa batas." },
+  { no:13, arabic:"الْبَكَمُ",         name:"Bakam",            arti:"Bisu",                lawannya:"Kalam",             desc:"Mustahil Allah bisu. Kebisuan adalah kekurangan yang mustahil bagi Allah. Al-Qur'an adalah bukti nyata Kalam Allah yang diturunkan kepada Nabi Muhammad ﷺ." },
+  { no:14, arabic:"كَوْنُهُۥ عَاجِزًا",name:"Kaunuhu 'Ajizan",  arti:"Keadaan-Nya Lemah",   lawannya:"Kaunuhu Qadiran",   desc:"Mustahil keadaan Allah adalah lemah. Ini pendalaman dari sifat 'Ajz — bahwa hakikat Zat Allah mustahil berada dalam keadaan lemah sedetikpun." },
+  { no:15, arabic:"كَوْنُهُۥ كَارِهًا",name:"Kaunuhu Karihan",  arti:"Keadaan-Nya Terpaksa",lawannya:"Kaunuhu Muridan",   desc:"Mustahil keadaan Allah adalah terpaksa. Hakikat Zat Allah mustahil berada dalam keterpaksaan; segala sesuatu terjadi atas kehendak-Nya yang murni." },
+  { no:16, arabic:"كَوْنُهُۥ جَاهِلًا",name:"Kaunuhu Jahilan",  arti:"Keadaan-Nya Bodoh",   lawannya:"Kaunuhu 'Aliman",  desc:"Mustahil keadaan Allah adalah bodoh. Hakikat Zat-Nya adalah Maha Mengetahui secara azali. Kejahilan dalam keadaan-Nya mustahil secara mutlak." },
+  { no:17, arabic:"كَوْنُهُۥ مَيِّتًا",name:"Kaunuhu Mayyitan", arti:"Keadaan-Nya Mati",    lawannya:"Kaunuhu Hayyan",   desc:"Mustahil keadaan Allah adalah mati. Kehidupan Allah adalah azali dan abadi; kematian dalam keadaan-Nya mustahil selamanya." },
+  { no:18, arabic:"كَوْنُهُۥ أَصَمَّ", name:"Kaunuhu Ashamm",  arti:"Keadaan-Nya Tuli",    lawannya:"Kaunuhu Sami'an",  desc:"Mustahil keadaan Allah adalah tuli. Keadaan-Nya sebagai Yang Maha Mendengar adalah hakikat yang tidak bisa dipisahkan dari ke-Ilahian-Nya." },
+  { no:19, arabic:"كَوْنُهُۥ أَعْمَى", name:"Kaunuhu A'ma",    arti:"Keadaan-Nya Buta",    lawannya:"Kaunuhu Bashiran", desc:"Mustahil keadaan Allah adalah buta. Penglihatan-Nya yang sempurna adalah hakikat Zat-Nya yang tidak terbatas." },
+  { no:20, arabic:"كَوْنُهُۥ أَبْكَمَ",name:"Kaunuhu Abkam",   arti:"Keadaan-Nya Bisu",    lawannya:"Kaunuhu Mutakalliman",desc:"Mustahil keadaan Allah adalah bisu. Kalam-Nya yang azali adalah hakikat Zat-Nya, dan Al-Qur'an adalah buktinya yang nyata." }
+];
+
+const sifatJaiz = [
+  {
+    no:1, arabic:"فِعْلُ كُلِّ مُمْكِنٍ أَوْ تَرْكُهُ", name:"Fi'lu kulli mumkin au tarkuhu",
+    arti:"Berbuat sesuatu yang mungkin atau meninggalkannya",
+    desc:"Allah boleh berbuat apa saja yang mungkin atau meninggalkannya, sesuai kehendak dan hikmah-Nya yang mutlak. Allah tidak wajib berbuat sesuatu dan tidak dilarang berbuat sesuatu. Ini berbeda dengan makhluk yang terikat kewajiban dan larangan.",
+    naqli_ar: "لَا يُسْـَٔلُ عَمَّا يَفْعَلُ وَهُمْ يُسْـَٔلُونَ",
+    naqli_src: "QS. Al-Anbiya' (21): 23",
+    naqli_tr: "Dia tidak ditanya tentang apa yang diperbuat-Nya, dan merekalah yang akan ditanyai.",
+    aqli: "Jika Allah wajib (harus) berbuat sesuatu atas dasar kewajiban eksternal, maka ada kekuatan lain yang lebih tinggi dari Allah yang memaksanya — itu mustahil. Begitu pula jika ada yang diharamkan bagi Allah dari luar diri-Nya. Maka Allah bebas mutlak dalam perbuatan-Nya."
+  }
+];
+
+const rasulWajib = [
+  { arabic:"الصِّدْقُ",   name:"Shidq",    arti:"Jujur",          desc:"Setiap Nabi dan Rasul wajib jujur dalam semua ucapannya. Tidak pernah berdusta walau dalam perkara kecil sekalipun." },
+  { arabic:"الْأَمَانَةُ",name:"Amanah",   arti:"Dapat Dipercaya",desc:"Rasul wajib amanah — dapat dipercaya dalam semua hal: ucapan, perbuatan, dan penyampaian risalah dari Allah." },
+  { arabic:"التَّبْلِيغُ",name:"Tabligh",  arti:"Menyampaikan",   desc:"Rasul wajib menyampaikan semua yang diperintahkan Allah kepada umatnya. Tidak boleh menyembunyikan satu ayat pun." },
+  { arabic:"الْفَطَانَةُ",name:"Fathanah", arti:"Cerdas",         desc:"Rasul wajib memiliki kecerdasan luar biasa agar dapat menyampaikan dan menjelaskan risalah kepada umat dengan sempurna." }
+];
+
+const rasulMustahil = [
+  { arabic:"الْكَذِبُ",   name:"Kidzib",   arti:"Dusta",             desc:"Mustahil Rasul berdusta. Jika Rasul pernah berdusta, maka seluruh risalah yang dibawanya tidak dapat dipercaya." },
+  { arabic:"الْخِيَانَةُ",name:"Khiyanah", arti:"Berkhianat",         desc:"Mustahil Rasul berkhianat. Keyakinan terhadap keotentikan wahyu bergantung pada kepercayaan penuh terhadap Rasul." },
+  { arabic:"الْكِتْمَانُ",name:"Kitman",   arti:"Menyembunyikan",    desc:"Mustahil Rasul menyembunyikan wahyu. QS. Al-Ma'idah (5): 67: 'Sampaikanlah apa yang diturunkan kepadamu dari Tuhanmu.'" },
+  { arabic:"الْبَلَادَةُ",name:"Baladah",  arti:"Bodoh",             desc:"Mustahil Rasul bodoh. Kecerdasan adalah syarat untuk menyampaikan, menjelaskan, dan mempertahankan kebenaran risalah." }
+];
+
+const rasulJaiz = [
+  { arabic:"الْأَعْرَاضُ الْبَشَرِيَّةُ", name:"A'radh Basyariyyah", arti:"Sifat-Sifat Kemanusiaan", desc:"Rasul boleh mengalami kebutuhan manusiawi seperti makan, minum, tidur, sakit ringan, dan wafat — selama tidak mengurangi derajat kenabian atau menjatuhkan martabat mereka. Ini justru menunjukkan bahwa Rasul adalah manusia biasa yang menjadi luar biasa karena pilihan Allah." }
+];
+
+// ═══════════════ RENDER ═══════════════
+
+function renderWajib() {
+  const g = document.getElementById('wajibGrid');
+  sifatWajib.forEach((s,i) => {
+    const card = document.createElement('div');
+    card.className = 'card wajib reveal';
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-num">${s.no}</div>
+        <div>
+          <div class="card-arabic">${s.arabic}</div>
+          <div class="card-name">${s.name}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-arti">Artinya: <strong>${s.arti}</strong></div>
+        <span class="card-tag">Sifat Wajib</span>
+      </div>`;
+    card.onclick = () => openModal(s, 'wajib');
+    g.appendChild(card);
+  });
+}
+
+function renderMustahil() {
+  const g = document.getElementById('mustahilGrid');
+  sifatMustahil.forEach((s,i) => {
+    const card = document.createElement('div');
+    card.className = 'card mustahil reveal';
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-num">${s.no}</div>
+        <div>
+          <div class="card-arabic">${s.arabic}</div>
+          <div class="card-name">${s.name}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-arti">Artinya: <strong>${s.arti}</strong></div>
+        <div style="font-size:12px;color:#888;margin-bottom:8px;">Lawan dari: ${s.lawannya}</div>
+        <span class="card-tag">Sifat Mustahil</span>
+      </div>`;
+    card.onclick = () => openMustahilModal(s);
+    g.appendChild(card);
+  });
+}
+
+function renderJaiz() {
+  const g = document.getElementById('jaizGrid');
+  sifatJaiz.forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'card jaiz reveal';
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-num">1</div>
+        <div>
+          <div class="card-arabic" style="font-size:18px;">${s.arabic}</div>
+          <div class="card-name">${s.name}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-arti">Artinya: <strong>${s.arti}</strong></div>
+        <span class="card-tag">Sifat Jaiz</span>
+      </div>`;
+    card.onclick = () => openModal(s, 'jaiz');
+    g.appendChild(card);
+  });
+}
+
+function renderRasul() {
+  ['rasulWajibGrid','rasulMustahilGrid','rasulJaizGrid'].forEach((id,idx) => {
+    const arr = [rasulWajib, rasulMustahil, rasulJaiz][idx];
+    const labels = ['Wajib Rasul','Mustahil Rasul','Jaiz Rasul'];
+    const g = document.getElementById(id);
+    arr.forEach(s => {
+      const card = document.createElement('div');
+      card.className = 'rasul-card reveal';
+      card.innerHTML = `
+        <div class="rasul-arabic">${s.arabic}</div>
+        <div class="rasul-name">${s.name}</div>
+        <div class="rasul-arti">${s.arti}</div>`;
+      card.onclick = () => openRasulModal(s, labels[idx]);
+      g.appendChild(card);
+    });
+  });
+}
+
+// ═══════════════ MODALS ═══════════════
+
+function openModal(s, type) {
+  document.getElementById('mArabic').textContent  = s.arabic;
+  document.getElementById('mTitle').textContent   = s.name;
+  document.getElementById('mMeaning').textContent = `Artinya: "${s.arti}"`;
+  document.getElementById('mDesc').textContent    = s.desc;
+
+  let dalil = '';
+  if (s.naqli_ar) {
+    dalil += `
+    <div class="dalil-block dalil-naqli">
+      <div class="dalil-label">Dalil Naqli (Al-Qur'an)</div>
+      <div class="dalil-arabic">${s.naqli_ar}</div>
+      <div class="dalil-source">${s.naqli_src}</div>
+      <div class="dalil-terjemah">${s.naqli_tr}</div>
+    </div>`;
+  }
+  if (s.aqli) {
+    dalil += `
+    <div class="dalil-block dalil-aqli">
+      <div class="dalil-label">Dalil Aqli (Akal)</div>
+      <div class="dalil-aqli-text">${s.aqli}</div>
+    </div>`;
+  }
+
+  document.getElementById('mDalil').innerHTML = dalil;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openMustahilModal(s) {
+  document.getElementById('mArabic').textContent  = s.arabic;
+  document.getElementById('mTitle').textContent   = s.name;
+  document.getElementById('mMeaning').textContent = `Artinya: "${s.arti}" — lawan dari sifat ${s.lawannya}`;
+  document.getElementById('mDesc').textContent    = s.desc;
+  document.getElementById('mDalil').innerHTML     = `
+    <div class="dalil-block dalil-aqli">
+      <div class="dalil-label">Dalil Aqli</div>
+      <div class="dalil-aqli-text">Sifat ${s.name} (${s.arti}) adalah kebalikan mutlak dari sifat wajib <strong>${s.lawannya}</strong>. Karena ${s.lawannya} wajib ada pada Allah, maka ${s.name} mustahil ada pada-Nya. Mustahil tidak perlu dalil tersendiri — cukup memahami wajibnya lawannya.</div>
+    </div>`;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openRasulModal(s, label) {
+  document.getElementById('mArabic').textContent  = s.arabic;
+  document.getElementById('mTitle').textContent   = s.name;
+  document.getElementById('mMeaning').textContent = `Artinya: "${s.arti}" — ${label}`;
+  document.getElementById('mDesc').textContent    = s.desc;
+  document.getElementById('mDalil').innerHTML     = '';
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ═══════════════ TABS ═══════════════
+
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: document.getElementById('navTabs').offsetTop, behavior: 'smooth' });
+  setTimeout(observeReveal, 100);
+}
+
+// ═══════════════ SCROLL REVEAL ═══════════════
+
+function observeReveal() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+}
+
+// ═══════════════ PROGRESS BAR ═══════════════
+
+window.addEventListener('scroll', () => {
+  const el = document.documentElement;
+  const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+  document.getElementById('progress').style.width = pct + '%';
+});
+
+// ═══════════════ INIT ═══════════════
+
+renderWajib();
+renderMustahil();
+renderJaiz();
+renderRasul();
+observeReveal();
+
+</script>
+</body>
+</html>
